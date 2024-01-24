@@ -14,7 +14,7 @@ include("./header.php")
 <body>
 
      <section class="gameContain">
-          <?php
+        <?php
           $map = [
                [3, 0, 0, 0, 2, 0, 0, 2, 0],
                [2, 0, 0, 2, 0, 0, 0, 2, 0],
@@ -26,11 +26,13 @@ include("./header.php")
           foreach ($map as  $row) {
                echo "<div class='row'>";
                foreach ($row as  $cell) {
-                    echo "<div  class='cells'></div>";
                     switch ($cell) {
+                         case '0':
+                              # code...
+                              break;
                     
                          case '3': 
-                              echo '<div  class="cells"><img src="https://toppng.com/uploads/preview/fantome-dessin-115505320747bmn5i7pcd.png" height=25px width=25px></div>';
+                            echo '<div class="cells"><img src="https://toppng.com/uploads/preview/fantome-dessin-115505320747bmn5i7pcd.png" height="25px" width="25px"></div>';
                               break;
                          
                          default:
@@ -40,7 +42,7 @@ include("./header.php")
                  
                }
                echo "</div>";
-          }
+          }  
 
 
           ?>
