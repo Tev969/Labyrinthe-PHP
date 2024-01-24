@@ -45,16 +45,17 @@ p {
   flex-flow: row wrap;
   background-color: antiquewhite;
   width: 50%;
-  height: 60vh;
+  height: 50vh;
+  padding: 44px;
 }
 
-#div0 {
-     background-image:url("  https://toppng.com/uploads/preview/fantome-dessin-115505320747bmn5i7pcd.png") ;
-     background-size: 60px;
+
+
+.row {
+     display: flex;
 }
 
 .cells {
-  background-image: url("https://i.stack.imgur.com/VTARy.png");
   background-size: 74px;
   flex: 0 0 5%;
   height: 55px;

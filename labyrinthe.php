@@ -15,22 +15,65 @@ include("./header.php")
 
      <section class="gameContain">
           <?php
-          $count = 96;
-          for ($i = 0; $i < $count; $i++) {
-               $divId = "div" . $i;
-             
-    echo "<div id='$divId' class='cells'></div>";
+          $map = [
+               [3, 0, 0, 0, 2, 0, 0, 2, 0],
+               [2, 0, 0, 2, 0, 0, 0, 2, 0],
+               [2, 0, 0, 2, 0, 0, 0, 2, 0],
+               [2, 0, 0, 2, 0, 0, 0, 2, 0],
+               [2, 0, 0, 2, 0, 0, 0, 2, 0]
+          ];
+
+          foreach ($map as  $row) {
+               echo "<div class='row'>";
+               foreach ($row as  $cell) {
+                    echo "<div  class='cells'></div>";
+                    switch ($cell) {
+                    
+                         case '3': 
+                              echo '<div  class="cells"><img src="https://toppng.com/uploads/preview/fantome-dessin-115505320747bmn5i7pcd.png" height=25px width=25px></div>';
+                              break;
+                         
+                         default:
+                              # code...
+                              break;
+                    }
+                 
+               }
+               echo "</div>";
           }
+
+
           ?>
 
+
      </section>
-     <form action="POST" method="post">
-          <button class="directionButtons" type="button">TOP</button>
-          <button class="directionButtons" type="button">RIGHT</button>
-          <button class="directionButtons" type="button">LEFT</button>
-          <button class="directionButtons" type="button">BOTTOM</button>
+
+     <form action="labyrinthe.php" method="post">
+          <button class="directionButtons" name="top" type="submit">TOP</button>
+          <button class="directionButtons" name="right" type="submit">RIGHT</button>
+          <button class="directionButtons" name="left" type="submit">LEFT</button>
+          <button class="directionButtons" name="bottom" type="submit">BOTTOM</button>
      </form>
-   
+
+     <?php
+
+
+     function top()
+     {
+     }
+     //    if (isset($_POST['top'])) {
+     //      top();
+     //  } elseif (isset($_POST['right'])) {
+     //      right();
+     //  }
+     //  if (isset($_POST['left'])) {
+     //      left();
+     //  } elseif (isset($_POST['bottom'])) {
+     //      bottom();
+     //  }
+
+     ?>
+
 </body>
 
 </html>
