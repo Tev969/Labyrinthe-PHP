@@ -38,12 +38,16 @@ p {
   text-wrap: pretty;
 }
 
+h1 {
+  font-size: 3rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
 .gameContain {
   justify-content: center;
 
   display: flex;
   flex-flow: row wrap;
-  background-color: antiquewhite;
   width: 50%;
   height: 50vh;
   padding: 44px;
@@ -73,4 +77,10 @@ p {
   flex-direction: column;
   width: 100px;
   height: 50px;
+  gap: 20px;
+}
+
+button {
+  text-align: center;
+  font-size: 2rem;
 }
