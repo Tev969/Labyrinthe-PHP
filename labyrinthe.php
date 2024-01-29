@@ -38,6 +38,11 @@ if (isset($_POST['bottom'])) {
      $_SESSION['pos'] = $pos;
 }
 
+if (isset($_POST['restart'])) {
+     session_destroy();
+     header("Refresh:0");
+}
+
 function right($map, $pos) {
 
      if (count($map[0]) - 1 > $pos[0] && $map[$pos[1]][$pos[0] + 1] !== 2) {
@@ -83,9 +88,8 @@ function areNeighbor($pos , $x , $y){
      return false;
 }
 
-
 function drawMap($map, $pos) {
-     $victory = false;
+    
      foreach ($map as $y =>  $row) {
           echo "<div class='row'>";
           foreach ($row as $x => $cell) {
@@ -99,7 +103,7 @@ function drawMap($map, $pos) {
                     
                }
                if (  $map[$pos[1]][$pos[0]] == 1)  {
-                   $victory = true;
+                 $_SESSION["win"]= "Gagné";
                }
            
                switch ($cell) {
@@ -148,8 +152,9 @@ function drawMap($map, $pos) {
           <button class="directionButtons" name="right" type="submit">→</button>
           <button class="directionButtons" name="left" type="submit">←</button>
           <button class="directionButtons" name="bottom" type="submit">↓</button>
+          <button class="directionButtons" name="restart" type="submit">restart</button>
      </form>
-     <h1><?= $victory = false ? null : "Tu à gagné !"?></h1>
+     <h1><?=  isset($_SESSION['win']) ? $_SESSION['win'] : null ?></h1>
 
 
 </body>
